@@ -16,3 +16,8 @@ var FiiSchema = new Schema({
 });
 
 var fii = module.exports = mongoose.model('Fii', FiiSchema);
+
+FiiSchema.pre("save", function(next){
+    this.codigo = self.codigo.split("*")[0];
+    next();
+})
