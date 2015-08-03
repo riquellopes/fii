@@ -8,6 +8,8 @@ var FiiSchema = new Schema({
     data_pagamento: String,
     valor_rendimento: String,
     porcentagem_rendimento: String,
+    baixa_liquides: Boolean,
+    investidor_qualificado: Boolean,
     observacao: String,
     created: {
         type: Date,
@@ -18,6 +20,8 @@ var FiiSchema = new Schema({
 var fii = module.exports = mongoose.model('Fii', FiiSchema);
 
 FiiSchema.pre("save", function(next){
-    this.codigo = self.codigo.split("*")[0];
+    this.investidor_qualificado = (this.codigo.indexOf("*IQ*") > -1);
+    this.baixa_liquides = (this.codigo.indexOf("*BL*") > -1);
+    this.codigo = this.codigo.split("*")[0];
     next();
 })

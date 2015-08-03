@@ -3,7 +3,7 @@ var scrap = require('scrap');
 var util = require("util");
 var config = require("../config");
 
-var hide_fields = "-_id -created -__v";
+var hide_fields = "-_id -created -__v -id";
 exports.list = function(request, response){
     Fii.find({}, hide_fields, function(error, docs){
         response.json(docs);
