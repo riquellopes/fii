@@ -1,0 +1,19 @@
+{
+  "name": "fii",
+  "version": "1.0.0",
+  "description": "API fundo imobiliario",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henrique Lopes",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^1.2.0",
+    "express": "^4.13.3",
+    "mocha": "^2.2.5",
+    "mongoose": "^4.1.0",
+    "nodemon": "^1.4.0",
+    "supertest": "^1.0.1"
+  }
+}
