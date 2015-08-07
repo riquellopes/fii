@@ -1,5 +1,8 @@
+var config = require("../config");
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+
+mongoose.connect(config.uri)
 
 var FiiSchema = new Schema({
     codigo: {type: String, index: true, required: true, unique:true},

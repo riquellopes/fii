@@ -4,9 +4,6 @@ var mongoose = require('mongoose');
 var api = require("./models/api.js");
 
 var app = exports.app = express();
-
-mongoose.connect(config.uri);
-
 var port = process.env.PORT || 5000;
 router = express.Router()
 

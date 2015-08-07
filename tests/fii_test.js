@@ -1,9 +1,6 @@
 var assert = require('assert');
 var Fii = require("../models/fii.js");
 var config = require("../config");
-var mongoose = require('mongoose');
-
-mongoose.connect(config.uri);
 
 describe("Fii", function(){
     before(function(){

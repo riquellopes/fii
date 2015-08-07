@@ -12,7 +12,11 @@ exports.list = function(request, response){
 
 exports.filter = function(request, response){
     Fii.findOne({codigo:request.params.codigo}, hide_fields, function(error, docs){
-        response.json(docs);
+        if( !error && docs ){
+            response.json(docs);
+        }else{
+            response.status(404).json({"message": "Fii not found"});
+        }
     });
 }
 
