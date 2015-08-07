@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var FiiSchema = new Schema({
-    codigo: {type: String, index: true, required: true},
+    codigo: {type: String, index: true, required: true, unique:true},
     data_base: String,
     cotacao_base: String,
     data_pagamento: String,
