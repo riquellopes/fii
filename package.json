@@ -9,6 +9,7 @@
   "author": "Henrique Lopes",
   "license": "ISC",
   "devDependencies": {
+    "async": "^1.4.1",
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
     "mocha": "^2.2.5",

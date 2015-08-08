@@ -1,7 +1,9 @@
+//http://willi.am/blog/2014/07/28/test-your-api-with-supertest/
 var Fii = require("./fii.js");
 var scrap = require('scrap');
 var util = require("util");
 var config = require("../config");
+var async = require("async")
 
 var hide_fields = "-_id -created -__v -id";
 exports.list = function(request, response){
@@ -22,9 +24,15 @@ exports.filter = function(request, response){
 
 exports.scrap = function(request, response){
     scrap(config.endpoint.concat("/"), function(err, $) {
-          if( err ) return response.json(err);
+        var message = "Serviço indisponível."
+          if( err ){
+              return response.status(503).json({message:message});
+          }
 
-          var datas = new Array();
+          var queue = async.queue(function(object, callback){
+              return object.save(callback);
+          }, 4);
+
           for(var i=1; i < $('tr','table').length; i++){
               var tr = $('tr','table').eq(i);
               var data = {
@@ -37,16 +45,23 @@ exports.scrap = function(request, response){
                   observacao: $("td", tr).eq(6).text()
               }
 
-              datas.push(data);
+              queue.push(new Fii(data), function(error, doc){
+                  if(error){
+                      queue.kill();
+                      return response.status(500).json(
+                          {message:"Erro ao importar as informações."});
+                  }
+              });
           }// for
 
-          Fii.create(datas, function(error, doc){
-              var message = util.format("%s fii, foram copiados.", i);
-              if( error ){
-                  message = "Erro ao importar as informações.";
-              }
+          if(queue.length() == 0){
+              return response.status(503).json({message:message});
+          }
 
-              response.json({"message": message});
-          });
+          queue.drain = function(){
+              response.json(
+                  {message: util.format(
+                      "%s fii, foram copiados.", (i-1))});
+          };
     });
 }

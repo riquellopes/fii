@@ -4,7 +4,7 @@ var config = require("../config");
 
 describe("Fii", function(){
     before(function(){
-        Fii.remove({codigo:"ABCP11"}, function(){});
+        Fii.remove({}, function(){});
     });
 
     it("should create fii ABCP11", function(done){
@@ -82,4 +82,20 @@ describe("Fii", function(){
             done();
         });
     });
+
+    it("should get error to create fii CPTS11B*IQ*", function(){
+        Fii.create({
+            codigo: "CPTS11B*IQ*",
+            data_base: "31/07/2015",
+            cotacao_base: "10,85",
+            data_pagamento: "07/08/2015",
+            valor_rendimento: "0,051",
+            porcentagem_rendimento: "0,468",
+            observacao: "Show"
+        }, function(error, doc){
+            assert.equal(error.name, "MongoError");
+            assert.equal(error.name, 'E11000 duplicate key error index: fii_test.fiis.$codigo_1 dup key: { : "CPTS11B" }');
+            done();
+        });
+    })
 });

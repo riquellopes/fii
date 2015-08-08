@@ -1,6 +1,9 @@
-var request = require("supertest")
-var assert = require("assert")
-var app = require("../app").app
+var request = require("supertest");
+var assert = require("assert");
+var nock = require("nock");
+var fs = require('fs');
+var config = require("../config");
+var app = require("../app").app;
 var Fii = require("../models/fii.js");
 
 describe("HOME", function(){
@@ -57,4 +60,51 @@ describe("API", function(){
                 done();
             });
     });
+});
+
+describe("SCRAP", function(){
+    before(function(){
+        Fii.remove({}, function(){});
+    });
+
+    it("should return {message:'95 fii, foram copiados.'}.", function(done){
+        nock(config.endpoint).get("/").once()
+            .reply(200, function(uri, requestBody, cb){
+                fs.readFile(__dirname.concat("/index.html") , cb);
+            });
+        request(app)
+            .get("/api/scrap")
+            .expect(200)
+            .end(function(error, res){
+                if( error ) return done(error);
+
+                assert.equal(res.body.message, "94 fii, foram copiados.");
+                done();
+            });
+    });
+
+    it("fii service return 404, scrap service should return message and status 503.", function(done){
+        nock(config.endpoint).get("/").once().reply(404, "Fora");
+        request(app)
+            .get("/api/scrap")
+            .expect(503)
+            .end(function(error, res){
+                assert.equal(res.body.message, "Serviço indisponível.");
+                done();
+            });
+    });
+
+    it("case html broken, scrap service should return status 503", function(done){
+        nock(config.endpoint).get("/").once()
+            .reply(200, function(uri, requestBody, cb){
+                fs.readFile(__dirname.concat("/error.html") , cb);
+            });
+        request(app)
+            .get("/api/scrap")
+            .expect(503)
+            .end(function(error, res){
+                assert.equal(res.body.message, "Serviço indisponível.");
+                done();
+            });
+    })
 });
