@@ -13,3 +13,7 @@ O app está rodando na porta 5000. Eu estou usando o [dotenv](https://www.npmjs.
 
 ### Dica:
 Se você não tem [mongodb]((https://www.mongodb.org) na sua máquina, ou não quer perder tempo instalando, existe um serviço free é muito legal, o [mongolab](https://mongolab.com).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
