@@ -1,0 +1,5 @@
+language: node_js
+    - "0.12"
+    - "0.12.5"
+service:
+    - mongodb

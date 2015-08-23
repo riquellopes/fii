@@ -1,4 +1,4 @@
-# API fundo imobiliário - FII.
+# API fundo de investimento imobiliário - FII.
 Para você que curte o mercado financeiro, em especial [FII](http://www.bmfbovespa.com.br/Fundos-Listados/FundosListados.aspx?tipoFundo=imobiliario&idioma=pt-br) e tem uma enorme dificuldade para saber quanto vai receber de proventos. Resolvi juntar o útil ao agradável, estudar um pouco mais sobre [Nodejs](https://nodejs.org) e procurar bons sites com conteúdo gratuíto sobre [FII](http://www.bmfbovespa.com.br/Fundos-Listados/FundosListados.aspx?tipoFundo=imobiliario&idioma=pt-br). Acabei criando uma api muitos simples, que recupera o valor de todos os proventos que vão ser pagos.
 
 ### Como funciona?
@@ -16,4 +16,3 @@ Se você não tem [mongodb](https://www.mongodb.org) na sua máquina, ou não qu
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
