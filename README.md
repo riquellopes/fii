@@ -1,3 +1,6 @@
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/riquellopes/fii.svg)](https://travis-ci.org/riquellopes/fii)
+
 # API fundo de investimento imobiliário - FII.
 Para você que curte o mercado financeiro, em especial [FII](http://www.bmfbovespa.com.br/Fundos-Listados/FundosListados.aspx?tipoFundo=imobiliario&idioma=pt-br) e tem uma enorme dificuldade para saber quanto vai receber de proventos. Resolvi juntar o útil ao agradável, estudar um pouco mais sobre [Nodejs](https://nodejs.org) e procurar bons sites com conteúdo gratuíto sobre [FII](http://www.bmfbovespa.com.br/Fundos-Listados/FundosListados.aspx?tipoFundo=imobiliario&idioma=pt-br). Acabei criando uma api muitos simples, que recupera o valor de todos os proventos que vão ser pagos.
 
@@ -13,7 +16,3 @@ O app está rodando na porta 5000. Eu estou usando o [dotenv](https://www.npmjs.
 
 ### Dica:
 Se você não tem [mongodb](https://www.mongodb.org) na sua máquina, ou não quer perder tempo instalando, existe um serviço free é muito legal, o [mongolab](https://mongolab.com).
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://travis-ci.org/riquellopes/fii.svg)](https://travis-ci.org/riquellopes/fii)
