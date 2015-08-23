@@ -16,3 +16,4 @@ Se você não tem [mongodb](https://www.mongodb.org) na sua máquina, ou não qu
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/riquellopes/fii.svg)](https://travis-ci.org/riquellopes/fii)
