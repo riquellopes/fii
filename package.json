@@ -4,19 +4,24 @@
   "description": "API fundo imobiliario",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha tests/"
+    "test": "node_modules/mocha/bin/mocha tests/",
+    "start": "./node_modules/.bin/naught start --worker-count $NODE_WORKERS --daemon-mode false app.js",
+    "stop": "./node_modules/.bin/naught stop"
   },
   "author": "Henrique Lopes",
   "license": "ISC",
+  "dependencies":{
+      "async": "^1.4.1",
+      "express": "^4.13.3",
+      "mongoose": "^4.1.0",
+      "nodemon": "^1.4.0",
+      "scrap": "^0.1.0",
+      "naught": "1.6.0"
+  },
   "devDependencies": {
-    "async": "^1.4.1",
     "dotenv": "^1.2.0",
-    "express": "^4.13.3",
     "mocha": "^2.2.5",
-    "mongoose": "^4.1.0",
     "nock": "^2.9.1",
-    "nodemon": "^1.4.0",
-    "scrap": "^0.1.0",
     "supertest": "^1.0.1"
   }
 }
