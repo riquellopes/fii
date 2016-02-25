@@ -19,8 +19,8 @@ app.get("/", function(request, response){
              contact: "http://www.henriquelopes.com.br",
              project: "https://github.com/riquellopes/fii",
              search: {
-                 exampleONE: "curl -X GET http://fii.henriquelopes.com.br/api/",
-                 exampleTWO: "curl -X GET http://fii.henriquelopes.com.br/api/CNES11B"
+                 exampleONE: "curl -X GET http://vast-lake-49104.herokuapp.com/api/",
+                 exampleTWO: "curl -X GET http://vast-lake-49104.herokuapp.com/api/CNES11B"
              }
     });
 });
