@@ -14,7 +14,15 @@ app.set('json spaces', 2);
 app.use("/api", router);
 
 app.get("/", function(request, response){
-    response.json({message:"Recupera informações sobre proventos dos fii"});
+    response.json({
+             about:"Recupera informações sobre proventos dos fii",
+             contact: "http://www.henriquelopes.com.br",
+             project: "https://github.com/riquellopes/fii",
+             search: {
+                 exemploONE: "curl -X GET http://fii.henriquelopes.com.br/api/",
+                 exemploTWO: "curl -X GET http://fii.henriquelopes.com.br/api/CNES11B"
+             }
+    });
 });
 
 app.listen(port);

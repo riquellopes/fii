@@ -14,7 +14,8 @@ describe("HOME", function(){
             .end(function(err, res){
                 if( err ) return done(err);
 
-                assert.equal(res.body.message, "Recupera informações sobre proventos dos fii");
+                assert.equal(res.body.about, "Recupera informações sobre proventos dos fii");
+                assert.equal(res.body.contact, "http://www.henriquelopes.com.br");
                 done();
             })
     });
