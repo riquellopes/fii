@@ -1,4 +1,3 @@
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riquellopes/fii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/riquellopes/fii.svg)](https://travis-ci.org/riquellopes/fii)
 
 # API fundo de investimento imobiliário - FII.
