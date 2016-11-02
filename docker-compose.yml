@@ -1,0 +1,25 @@
+version: '2'
+services:
+ api:
+    build: .
+    restart: always
+    container_name: fii-api
+    volumes:
+      - .:/api
+      - /api/node_modules
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    env_file:
+      - .env
+    expose:
+      - 5000
+    ports:
+      - 5000:5000
+    command: make runnode
+ mongo:
+     container_name: fii-db
+     image: mongo
+     expose:
+      - "27017"

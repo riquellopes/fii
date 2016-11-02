@@ -1,7 +1,7 @@
 {
   "name": "fii",
   "version": "1.0.0",
-  "description": "API fundo imobiliario",
+  "description": "API fundo imobiliário",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha tests/",
@@ -19,7 +19,6 @@
       "naught": "1.6.0"
   },
   "devDependencies": {
-    "dotenv": "^1.2.0",
     "mocha": "^2.2.5",
     "nock": "^2.9.1",
     "supertest": "^1.0.1"
