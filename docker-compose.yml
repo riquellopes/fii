@@ -17,7 +17,7 @@ services:
       - 5000
     ports:
       - 5000:5000
-    command: make runnode
+    command: make run
  mongo:
      container_name: fii-db
      image: mongo
